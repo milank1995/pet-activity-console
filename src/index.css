@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Outfit", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+html {
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 1400px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.header-box {
+    @apply flex items-center justify-center w-[2.875rem] h-10 bg-purple text-white rounded
+}
+
+.bg-main{
+    background: linear-gradient(to right, #f9f2fd, #FBFAFE)
+}
+
+.custom-select-wrapper {
+    position: relative;
+    width: 169px;
+}
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+}
