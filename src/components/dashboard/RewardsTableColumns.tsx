@@ -64,7 +64,7 @@ export const rewardsTableColumns: ColumnDef<User>[] = [
     },
     {
         accessorKey: 'action',
-        header: () => <DownloadIcon />,
+        header: () => <div className="cursor-pointer"><DownloadIcon /></div> ,
         size: 50,
         enableSorting: false,
     },

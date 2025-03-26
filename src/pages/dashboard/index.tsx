@@ -52,7 +52,11 @@ const Dashboard = () => {
                 <Tabs tabs={dashboardTabs} selectedIndex={selectedIndex} onTabChange={setSelectedIndex}/>
                 <TabPanel index={2} value={selectedIndex} className="flex-1 flex flex-col gap-2.5">
                     <div className="bg-white w-full h-[22.125rem] rounded-[0.625rem] py-5">
-                        <div className="flex items-center justify-center float-end w-[2.875rem] h-10 rounded bg-white"><DownloadIcon/></div>
+                        <div className="flex items-center justify-center float-end w-[2.875rem] h-10 rounded bg-white">
+                            <div className="w-fit cursor-pointer">
+                                <DownloadIcon/>
+                            </div>
+                        </div>
 
                         <RewardChart/>
 

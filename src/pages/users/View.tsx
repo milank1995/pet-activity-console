@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {LeftPurpleArrowIcon} from "../../assets/Icons.tsx";
 import DogPaw from "../../components/DogPaw.tsx";
 import SummaryInfo from "../../components/users/SummaryInfo.tsx";
@@ -7,12 +7,14 @@ import InfoBlock from "../../components/users/InfoBlock.tsx";
 import {activityStats, rewardStarTabs, statusListStars} from "../../constants.ts";
 import StatCard from "../../components/dashboard/StatCard.tsx";
 import StatusLegend from "../../components/dashboard/StatusLegend.tsx";
-import {fetchRewardsData, fetchStarsData, fetchUserById} from "../../services/rewardsApi.ts";
+import {fetchStarsData, fetchUserById} from "../../services/rewardsApi.ts";
 import {RewardStar, User} from "../../data/types/Rewards.ts";
 import TableContainer from "../../components/TableContainer.tsx";
 import {starsTableColumns} from "../../components/users/StartTableColumns.tsx";
 import Tabs from "../../components/Tabs.tsx";
 import TabPanel from "../../components/TabPanel.tsx";
+import PetCard from "../../components/PetCard.tsx";
+import {petsList} from "../../constants.ts";
 
 const UsersView = () => {
     const navigate = useNavigate()
@@ -96,8 +98,15 @@ const UsersView = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                Pet Block
+            <div className="flex flex-col gap-8">
+                <p className="text-base text-purple font-bold">Pets({petsList.length})</p>
+                <div className="flex gap-8">
+                    {
+                        petsList.map((pet,index)=>(
+                            <PetCard {...pet}/>
+                        ))
+                    }
+                </div>
             </div>
             <div className="flex flex-col gap-8">
                 <p className="text-base text-purple font-bold">Activity</p>
@@ -125,8 +134,6 @@ const UsersView = () => {
                         }
 
                     </div>
-
-
                 </div>
 
                 <TabPanel index={0} value={selectedIndex} className="mt-2.5">

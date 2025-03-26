@@ -1,6 +1,6 @@
 import {RewardExpiredIcon, RewardIcon, RewardRedeemIcon, StarIcon, UserIcon} from "./assets/Icons.tsx";
-import {StatusListItem} from "./data/types/Rewards.ts";
-import React from "react";
+import dog1 from "./assets/dog1.png"
+import dog2 from "./assets/dog2.png"
 
 export const dashboardTabs = [
     {name: 'Pet Owner Joins'},
@@ -38,4 +38,31 @@ export const statusListStars = [
     { label: "Current stars", color: "bg-green", icon: StarIcon },
     { label: "Stars expiring soon (within 30 days)", color: "bg-yellow", icon: StarIcon },
     { label: "Stars expired", color: "bg-pink", icon: StarIcon },
+]
+
+export const petsList = [
+    {
+        name: 'Blue',
+        image: dog1,
+        weightSize: 'Medium dog (10-20 kg)',
+        gender: 'Male',
+        birthDate: '10/10/2022',
+        age: '3',
+        totalStars: 8,
+        totalRedeemed: 1,
+        nextTreatment: '5 days',
+        bgColor: 'bg-pink'
+    },
+    {
+        name: 'Buddy',
+        image: dog2,
+        weightSize: 'Medium dog (10-20 kg)',
+        gender: 'Male',
+        birthDate: '01/01/2024',
+        age: '1',
+        totalStars: 1,
+        totalRedeemed:4 ,
+        nextTreatment: '2 Weeks',
+        bgColor: 'bg-blue'
+    }
 ]

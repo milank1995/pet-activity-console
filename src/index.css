@@ -50,7 +50,7 @@ html {
 }
 
 .header-box {
-    @apply flex items-center justify-center w-[2.875rem] h-10 bg-purple text-white rounded
+    @apply flex items-center justify-center w-[2.875rem] h-10 bg-purple text-white rounded cursor-pointer
 }
 
 .bg-main{
@@ -73,4 +73,13 @@ html {
 
 .btn-pagination {
  @apply flex items-center justify-center w-[2.375rem] h-[2.375rem] border border-light-gray text-dark-gray
+}
+.border-top {
+    border-bottom-left-radius: 44%  25% ;
+    border-bottom-right-radius: 44%  25% ;
+}
+
+.border-bottom {
+    border-top-left-radius: 54%  40% ;
+    border-top-right-radius: 54%  40% ;
 }

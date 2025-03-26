@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import {RewardStar, User} from "../../data/types/Rewards.ts";
 import { DownloadIcon } from "../../assets/Icons.tsx";
-import {statusList, statusListStars} from "../../constants.ts";
+import {statusListStars} from "../../constants.ts";
 
 export const starsTableColumns: ColumnDef<RewardStar>[] = [
     {
@@ -53,7 +53,7 @@ export const starsTableColumns: ColumnDef<RewardStar>[] = [
     },
     {
         accessorKey: 'action',
-        header: () => <DownloadIcon />,
+        header: () => <div className="cursor-pointer"><DownloadIcon /></div>,
         size: 50,
         enableSorting: false,
     },
