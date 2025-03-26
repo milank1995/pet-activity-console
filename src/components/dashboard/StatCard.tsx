@@ -11,7 +11,7 @@ interface Props {
 const StatCard = ({ icon: Icon, value, label, textColor, bgColor, iconBg } : Props) => {
     return (
         <div className={`flex items-center gap-5 p-5 w-52 rounded-lg ${textColor} ${bgColor}`}>
-            <div className={`flex items-center justify-center w-7 h-7 rounded-lg ${iconBg}`}>
+            <div className={`flex items-center justify-center w-[1.875rem] h-[1.875rem] rounded-lg ${iconBg}`}>
                 <Icon/>
             </div>
             <div className="flex flex-col gap-1">

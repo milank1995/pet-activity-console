@@ -26,7 +26,6 @@ const Sidebar = () => {
                 <div className="flex-1 flex flex-col gap-10 overflow-auto mt-[3.75rem] no-scrollbar">
                     {
                         sidebarItems.map((item, index) => {
-                            console.log('clickedUrl', clickedUrl)
                             const isActive = clickedUrl === item.path
                             return (
                                 <React.Fragment key={index}>

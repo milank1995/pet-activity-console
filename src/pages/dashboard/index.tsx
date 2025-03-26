@@ -14,6 +14,8 @@ import dummy from "../../utils/dummy.json"
 import {ColumnDef} from "@tanstack/react-table";
 import TableContainer from "../../components/TableContainer.tsx";
 import StatusLegend, {statusList} from "../../components/dashboard/StatusLegend.tsx";
+import {generatePath, useNavigate} from "react-router-dom";
+import {routeConstants} from "../../router/routeConstants.ts";
 
 const tabs = [
     {name: 'Pet Owner Joins'},
@@ -28,6 +30,7 @@ const stats = [
     { icon: RewardRedeemIcon, value: 210, label: "Reward issued", textColor: "text-blue", bgColor: "bg-light-blue", iconBg: "bg-blue" },
 ];
 const Dashboard = () => {
+    const navigate = useNavigate()
     const [selectedValue, setSelectedValue] = useState("all-time")
     const [selectedIndex, setSelectedIndex] = useState(2)
 
@@ -132,6 +135,9 @@ const Dashboard = () => {
                                columns={headers}
                                bodyData={dummy.users}
                                bodyRowClassName="!h-[3.125rem]"
+                               onRowClick={(row)=> {
+                                   navigate(generatePath(routeConstants.usersView,{id: row.original.firstName}), {state: row.original})
+                               }}
                            />
                        </div>
 
