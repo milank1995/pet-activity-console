@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +7,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: "Outfit", sans-serif !important;
+    font-family: "Open Sans", sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -67,4 +69,8 @@ html {
     background-color: white;
     cursor: pointer;
     outline: none;
+}
+
+.btn-pagination {
+ @apply flex items-center justify-center w-[2.375rem] h-[2.375rem] border
 }

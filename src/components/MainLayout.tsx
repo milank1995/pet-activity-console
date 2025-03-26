@@ -5,7 +5,7 @@ import Header from "./Header.tsx";
 
 function MainLayout() {
     return (
-        <div className="flex h-full text-base font-medium bg-main">
+        <div className="flex h-screen text-base font-medium bg-main">
             <Sidebar />
             <div className={`flex flex-col flex-1 overflow-x-auto pl-[2.3125rem] pr-8 `}>
                 <Header/>
