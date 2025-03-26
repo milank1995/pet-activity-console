@@ -23,8 +23,9 @@ interface Props {
     bodyRowClassName?: string,
     tableClassName?: string,
     headerClassName?: string,
+    onRowClick?: (row:any)=>void,
 }
-const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, headerClassName} : Props) => {
+const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, headerClassName, onRowClick,} : Props) => {
     const [pagination, setPagination] = React.useState<PaginationState>({
         pageIndex: 0,
         pageSize: 10,
@@ -138,7 +139,7 @@ const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, he
                                     .rows
                                     .map(row => {
                                         return (
-                                            <tr key={row.id} className={`h-[4.75rem] border-b border-gray10 ${bodyRowClassName}`}>
+                                            <tr key={row.id} onClick={()=>onRowClick?.(row)} className={`h-[4.75rem] border-b border-gray10 ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
                                                 {row.getVisibleCells().map((cell, index) => {
                                                     return (
                                                         <td key={cell.id} className={`font-normal py-4 ${index === 0 ? 'pl-3 pr-3': 'px-3'}`}>
@@ -160,61 +161,86 @@ const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, he
                 </table>
             </div>
 
+
             {
                 bodyData.length > 0 &&
-                <div className="flex items-center justify-end pr-3 py-5">
-                    <button
-                        className="btn-pagination rounded-l"
-                        onClick={() => table.firstPage()}
-                        disabled={!table.getCanPreviousPage()}
-                    >
-                        <LeftDoubleArrowIcon/>
-                    </button>
-                    <button
-                        className="btn-pagination"
-                        onClick={() => table.previousPage()}
-                        disabled={!table.getCanPreviousPage()}
-                    >
-                        <LeftSingleArrowIcon/>
-                    </button>
-                    {getPaginationButtons().map((page, index) => {
-                        if (typeof page === 'string') {
-                            return (
-                                <span key={index} className="ellipsis btn-pagination">
+                <div className="flex items-center justify-between py-5 px-3">
+                    <div className="text-dark-gray font-normal text-xs flex items-center gap-3">
+                        <div className="flex items-center gap-3">
+                            <p> Rows per page: </p>
+
+                            <select
+                                className="py-3 pl-2 pr-5 border border-light-gray rounded"
+                            value={table.getState().pagination.pageSize}
+                            onChange={e => {
+                                table.setPageSize(Number(e.target.value))
+                            }}
+                        >
+                            {[10, 20, 30, 40, 50].map(pageSize => (
+                                <option key={pageSize} value={pageSize}>
+                                    {pageSize}
+                                </option>
+                            ))}
+                        </select>
+                        </div>
+                        Displaying {table.getRowModel().rows.length.toLocaleString()} of{' '}
+                        {table.getRowCount().toLocaleString()} results
+                    </div>
+                    <div className="flex items-center justify-end">
+                        <button
+                            className="btn-pagination rounded-l"
+                            onClick={() => table.firstPage()}
+                            disabled={!table.getCanPreviousPage()}
+                        >
+                            <LeftDoubleArrowIcon/>
+                        </button>
+                        <button
+                            className="btn-pagination"
+                            onClick={() => table.previousPage()}
+                            disabled={!table.getCanPreviousPage()}
+                        >
+                            <LeftSingleArrowIcon/>
+                        </button>
+                        {getPaginationButtons().map((page, index) => {
+                            if (typeof page === 'string') {
+                                return (
+                                    <span key={index} className="ellipsis btn-pagination">
                                  {page}
                             </span>
-                            );
-                        }
-                        return (
-                            <button
-                                key={`${page}_${index}`}
-                                onClick={() => {
-                                    table.setPageIndex(page - 1);
-                                    // onPageChange(parseInt(page))
-                                }}
-                                className={`
+                                );
+                            }
+                            return (
+                                <button
+                                    key={`${page}_${index}`}
+                                    onClick={() => {
+                                        table.setPageIndex(page - 1);
+                                        // onPageChange(parseInt(page))
+                                    }}
+                                    className={`
                                     ${page === currentPage ? 'border-purple' : 'border-light-gray'} btn-pagination
                                 `}
-                            >
-                                {page}
-                            </button>
-                        );
-                    })}
-                    <button
-                        className="btn-pagination"
-                        onClick={() => table.nextPage()}
-                        disabled={!table.getCanNextPage()}
-                    >
-                        <RightSingleArrowIcon/>
-                    </button>
-                    <button
-                        className="btn-pagination rounded-r"
-                        onClick={() => table.lastPage()}
-                        disabled={!table.getCanNextPage()}
-                    >
-                        <RightDoubleArrowIcon/>
-                    </button>
+                                >
+                                    {page}
+                                </button>
+                            );
+                        })}
+                        <button
+                            className="btn-pagination"
+                            onClick={() => table.nextPage()}
+                            disabled={!table.getCanNextPage()}
+                        >
+                            <RightSingleArrowIcon/>
+                        </button>
+                        <button
+                            className="btn-pagination rounded-r"
+                            onClick={() => table.lastPage()}
+                            disabled={!table.getCanNextPage()}
+                        >
+                            <RightDoubleArrowIcon/>
+                        </button>
+                    </div>
                 </div>
+
             }
 
         </div>
