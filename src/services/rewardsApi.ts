@@ -1,4 +1,4 @@
-import {RewardStar, User} from '../data/types/Rewards';
+import { RewardStar, User } from '../data/types/Rewards';
 
 export const fetchRewardsData = async (): Promise<User[]> => {
     try {
@@ -25,7 +25,7 @@ export const fetchUserById = async (id: number): Promise<User | null> => {
         }
 
         const data = await response.json();
-        const user = data.users.find((user: User) => user.id === parseInt(id));
+        const user = data.users.find((user: User) => user.id === Number(id));
         return user || null;
     } catch (error) {
         console.error('Error fetching user data:', error);

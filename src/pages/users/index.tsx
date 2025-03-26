@@ -1,7 +1,7 @@
 import Users from "../../components/Users";
 
-const RewardsPage = () => {
+const UsersPage = () => {
   return <Users />;
 };
 
-export default RewardsPage;
+export default UsersPage;

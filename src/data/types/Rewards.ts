@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-    type Table,
-} from '@tanstack/react-table';
 
 export interface User {
     id: number;
@@ -21,7 +18,7 @@ export interface TableContainerProps {
     bodyRowClassName?: string;
     tableClassName?: string;
     headerClassName?: string;
-    onRowClick?: (row:any)=>void,
+    onRowClick?: (row: any) => void;
 }
 
 export interface StatusListItem {
