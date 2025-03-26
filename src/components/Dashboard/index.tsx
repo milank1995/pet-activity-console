@@ -1,37 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { generatePath, useNavigate } from "react-router-dom";
 import { DownloadIcon } from "../../assets/Icons.tsx";
 import DataTable from "../../components/DataTable";
 import TabPanel from "../../components/TabPanel/index.tsx";
 import Tabs from "../../components/Tabs/index.tsx";
 import { dashboardTabs, rewardsStats, statusList } from "../../constants.ts";
-import { User } from "../../data/types/Rewards.ts";
 import { routeConstants } from "../../router/routeConstants.ts";
-import { fetchRewardsData } from "../../services/rewardsApi.ts";
 import RewardChart from "./components/RewardChart.tsx";
 import { rewardsTableColumns } from "./components/RewardsTableColumns.tsx";
 import StatCard from "./components/StatCard.tsx";
 import StatusLegend from "./components/StatusLegend.tsx";
+import { useDashboardState } from "../../hooks/Dashboard/useDashboardState.ts"
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [selectedValue, setSelectedValue] = useState("all-time");
-  const [selectedIndex, setSelectedIndex] = useState(2);
-  const [userList, setUserList] = React.useState<User[]>([]);
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const data = await fetchRewardsData();
-        setUserList(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        // setLoading(false);
-      }
-    };
 
-    loadData();
-  }, []);
+  const {
+    selectedValue,
+    selectedIndex,
+    userList,
+    setSelectedValue,
+    setSelectedIndex
+  } = useDashboardState();
+
   return (
     <div className="h-100 flex flex-col gap-10 flex-1 overflow-auto no-scrollbar">
       <select

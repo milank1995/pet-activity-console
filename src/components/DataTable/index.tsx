@@ -48,13 +48,6 @@ const TableContainer = ({
     },
   });
 
-  //   const checkForActionColumn = (columns: ColumnDef<User>[]): boolean =>
-  //     columns.some(
-  //       (item) =>
-  //         ("accessorKey" in item && item.accessorKey === "action") ||
-  //         ("columns" in item && checkForActionColumn(item.columns || [])),
-  //     );
-
   const pageCount = table.getPageCount();
   const currentPage = table.getState().pagination.pageIndex + 1;
 

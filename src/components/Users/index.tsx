@@ -9,7 +9,7 @@ import Tabs from "../../components/Tabs/index.tsx";
 import DogPaw from "../../components/Users/components/DogPaw.tsx";
 import InfoBlock from "../../components/Users/components/InfoBlock.tsx";
 import PetCard from "../../components/Users/components/PetCard.tsx";
-import { starsTableColumns } from "../../components/Users/components/StartTableColumns.tsx";
+import { starsTableColumns } from "./components/StartTableColumns.tsx";
 import SummaryInfo from "../../components/Users/components/SummaryInfo.tsx";
 import {
   activityStats,
@@ -28,30 +28,29 @@ const Users = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
-    const loadData = async (id: number) => {
+    const loadUserData = async (id: number) => {
       try {
         const data = await fetchUserById(id);
         setUserInfo(data);
       } catch (err) {
-        console.error(err);
+        setUserInfo(null)
       }
     };
-    if (params?.id) {
-      loadData(Number(params?.id));
-    }
-  }, [params?.id]);
 
-  useEffect(() => {
-    const loadData = async () => {
+    const loadStarsData = async () => {
       try {
         const data = await fetchStarsData();
         setRewardStarList(data);
       } catch (err) {
-        console.error(err);
+        setRewardStarList([])
       }
     };
-    loadData();
-  }, []);
+
+    if (params?.id) {
+      loadUserData(Number(params?.id));
+    }
+    loadStarsData();
+  }, [params?.id]);
 
   return (
     <div className="h-100 flex flex-col gap-10 flex-1 overflow-auto no-scrollbar">

@@ -1,16 +1,12 @@
-import { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout";
 import Dashboard from "./pages/dashboard";
 import Rewards from "./pages/rewards";
 import Users from "./pages/users";
 import { routeConstants } from "./router/routeConstants.ts";
-function App() {
-  const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+function App() {
 
   return (
     <Routes>
