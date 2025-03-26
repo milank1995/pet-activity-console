@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { LeftPurpleArrowIcon } from "../../assets/Icons.tsx";
 import StatCard from "../../components/Dashboard/components/StatCard.tsx";
 import StatusLegend from "../../components/Dashboard/components/StatusLegend.tsx";
@@ -17,40 +16,17 @@ import {
   rewardStarTabs,
   statusListStars,
 } from "../../constants.ts";
-import { RewardStar, User } from "../../data/types/Rewards.ts";
-import { fetchStarsData, fetchUserById } from "../../services/rewardsApi.ts";
+import { useDashboardState } from "../../hooks/User/useUserState.ts"
 
 const Users = () => {
   const navigate = useNavigate();
-  const params = useParams();
-  const [userInfo, setUserInfo] = useState<User | null>(null);
-  const [rewardStarList, setRewardStarList] = useState<RewardStar[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
 
-  useEffect(() => {
-    const loadUserData = async (id: number) => {
-      try {
-        const data = await fetchUserById(id);
-        setUserInfo(data);
-      } catch (err) {
-        setUserInfo(null)
-      }
-    };
-
-    const loadStarsData = async () => {
-      try {
-        const data = await fetchStarsData();
-        setRewardStarList(data);
-      } catch (err) {
-        setRewardStarList([])
-      }
-    };
-
-    if (params?.id) {
-      loadUserData(Number(params?.id));
-    }
-    loadStarsData();
-  }, [params?.id]);
+  const {
+    userInfo,
+    rewardStarList,
+    selectedIndex,
+    setSelectedIndex
+  } = useDashboardState();
 
   return (
     <div className="h-100 flex flex-col gap-10 flex-1 overflow-auto no-scrollbar">
