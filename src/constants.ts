@@ -1,6 +1,6 @@
-import {RewardExpiredIcon, RewardIcon, RewardRedeemIcon, StarIcon, UserIcon} from "./assets/Icons.tsx";
-import dog1 from "./assets/dog1.png"
-import dog2 from "./assets/dog2.png"
+import { RewardExpiredIcon, RewardIcon, RewardRedeemIcon, StarIcon, UserIcon } from "./assets/Icons.tsx";
+import dog1 from "./assets/dog1.png";
+import dog2 from "./assets/dog2.png";
 
 export const dashboardTabs = [
     {name: 'Pet Owner Joins'},

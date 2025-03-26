@@ -1,5 +1,5 @@
 export const routeConstants = {
     dashboard: "/",
-    rewards: "/rewards",
+    rewards: "/rewards/view/:id",
     usersView: '/user/view/:id',
 };
