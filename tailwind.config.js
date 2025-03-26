@@ -14,6 +14,9 @@ export default {
         'light-blue': '#E6F5FB',
         'purple': '#471E6D',
         'light-purple': '#EDE8F0',
+        'dark-gray': '#454545',
+        'yellow': '#F4B029',
+        'pink': '#EF4166',
       }
     },
   },
