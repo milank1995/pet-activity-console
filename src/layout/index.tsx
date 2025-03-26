@@ -10,7 +10,7 @@ function MainLayout() {
         className={`flex flex-col flex-1 overflow-x-auto pl-[2.3125rem] pr-8 `}
       >
         <Header />
-        <div className="flex-1 overflow-auto bg-background py-8 no-scrollbar">
+        <div className="flex-1 overflow-auto bg-background py-8 no-scrollbar" id="user-content">
           <Outlet />
         </div>
       </div>

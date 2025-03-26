@@ -3,11 +3,16 @@ import {useEffect, useState} from "react";
 import {RewardStar, User} from "../../data/types/Rewards.ts";
 import {fetchStarsData, fetchUserById} from "../../services/rewardsApi.ts";
 
-export const useDashboardState = () => {
+export const useUserState = () => {
     const params = useParams();
     const [userInfo, setUserInfo] = useState<User | null>(null);
     const [rewardStarList, setRewardStarList] = useState<RewardStar[]>([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
+
+    useEffect(() => {
+        const query = document.querySelector('#user-content');
+        query.scrollTo(0, 0);
+    }, [])
 
     useEffect(() => {
         const loadUserData = async (id: number) => {

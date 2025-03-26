@@ -13,7 +13,7 @@ import {
   rewardStarTabs,
   statusListStars,
 } from "../../constants.ts";
-import { useDashboardState } from "../../hooks/User/useUserState.ts"
+import { useUserState} from "../../hooks/User/useUserState.ts"
 import UserSummary from "./components/UserSummary.tsx";
 
 const Users = () => {
@@ -24,7 +24,7 @@ const Users = () => {
     rewardStarList,
     selectedIndex,
     setSelectedIndex
-  } = useDashboardState();
+  } = useUserState();
 
   return (
     <div className="h-100 flex flex-col gap-10 flex-1 overflow-auto no-scrollbar">
