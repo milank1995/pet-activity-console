@@ -1,17 +1,14 @@
 import React from 'react';
+import { StatusListItem } from '../../data/types/Rewards';
 import {RewardIcon, RewardRedeemIcon, RewardExpiredIcon} from "../../assets/Icons.tsx";
-interface StatusItem {
-    label: string;
-    color: string;
-    icon: React.ReactNode;
-}
 
-export const statusList: StatusItem[] = [
+export const statusList: StatusListItem[] = [
     { label: "Issued", color: "bg-green", icon: <RewardIcon/> },
     { label: "Redeemed", color: "bg-blue", icon: <RewardRedeemIcon/> },
     { label: "Reconciled", color: "bg-yellow", icon: <RewardRedeemIcon/> },
     { label: "Expired", color: "bg-pink", icon: <RewardExpiredIcon/> },
 ]
+
 const StatusLegend = () => {
     return (
         <div className="flex items-center justify-end gap-5 p-3">

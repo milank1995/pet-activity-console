@@ -1,3 +1,4 @@
+import React, {useEffect } from "react";
 import {
     ColumnDef,
     flexRender,
@@ -8,7 +9,7 @@ import {
     getPaginationRowModel,
     PaginationState
 } from "@tanstack/react-table";
-import React, {useMemo} from "react";
+import {TableContainerProps, User} from "../data/types/Rewards.ts";
 import {
     ArrowsIcon,
     LeftDoubleArrowIcon,
@@ -16,29 +17,35 @@ import {
     RightDoubleArrowIcon,
     RightSingleArrowIcon
 } from "../assets/Icons.tsx";
+import {fetchRewardsData} from "../services/rewardsApi.ts";
+import {rewardsTableColumns} from "./dashboard/components/RewardsTableColumns.tsx";
 
-interface Props {
-    columns: any[],
-    bodyData: any[],
-    bodyRowClassName?: string,
-    tableClassName?: string,
-    headerClassName?: string,
-    onRowClick?: (row:any)=>void,
-}
-const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, headerClassName, onRowClick,} : Props) => {
+const RewardsTable = ({bodyRowClassName, tableClassName, headerClassName, onRowClick,} : TableContainerProps) => {
     const [pagination, setPagination] = React.useState<PaginationState>({
         pageIndex: 0,
         pageSize: 10,
     })
     const [sorting, setSorting] = React.useState<SortingState>([])
+    const [userList, setUserList] = React.useState<User[]>([]);
 
-    const data = useMemo(
-        () => bodyData ,
-        [bodyData]
-    );
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const data = await fetchRewardsData();
+                setUserList(data);
+            } catch (err) {
+                console.error(err);
+            } finally {
+                // setLoading(false);
+            }
+        };
+
+        loadData();
+    }, []);
+
     const table = useReactTable({
-        columns,
-        data,
+        columns: rewardsTableColumns,
+        data: userList,
         debugTable: true,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
@@ -130,40 +137,37 @@ const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, he
                     ))}
                     </thead>
                     <tbody className="text-xs font-normal text-dark-gray">
+                    {
+                        userList.length > 0 &&
                         <>
-                        {
-                            bodyData.length > 0 &&
-                            <>
-                                {table
-                                    .getRowModel()
-                                    .rows
-                                    .map(row => {
-                                        return (
-                                            <tr key={row.id} onClick={()=>onRowClick?.(row)} className={`h-[4.75rem] border-b border-gray10 ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
-                                                {row.getVisibleCells().map((cell, index) => {
-                                                    return (
-                                                        <td key={cell.id} className={`font-normal py-4 ${index === 0 ? 'pl-3 pr-3': 'px-3'}`}>
-                                                            {flexRender(
-                                                                cell.column.columnDef.cell,
-                                                                cell.getContext()
-                                                            )}
-                                                        </td>
-                                                    )
-                                                })}
-                                            </tr>
-                                        )
-                                    })}
-                            </>
-                        }
-
-                    </>
+                            {table
+                                .getRowModel()
+                                .rows
+                                .map(row => {
+                                    return (
+                                        <tr key={row.id} onClick={() => onRowClick(row.id)} className={`h-[4.75rem] border-b border-gray10 ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
+                                            {row.getVisibleCells().map((cell, index) => {
+                                                return (
+                                                    <td key={cell.id} className={`font-normal py-4 ${index === 0 ? 'pl-3 pr-3': 'px-3'}`}>
+                                                        {flexRender(
+                                                            cell.column.columnDef.cell,
+                                                            cell.getContext()
+                                                        )}
+                                                    </td>
+                                                )
+                                            })}
+                                        </tr>
+                                    )
+                                })}
+                        </>
+                    }
                     </tbody>
                 </table>
             </div>
 
 
             {
-                bodyData.length > 0 &&
+                userList.length > 0 &&
                 <div className="flex items-center justify-between py-5 px-3">
                     <div className="text-dark-gray font-normal text-xs flex items-center gap-3">
                         <div className="flex items-center gap-3">
@@ -247,4 +251,4 @@ const TableContainer = ({columns, bodyData, bodyRowClassName, tableClassName, he
     );
 };
 
-export default TableContainer;
+export default RewardsTable;

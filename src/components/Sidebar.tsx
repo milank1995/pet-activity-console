@@ -1,7 +1,8 @@
-import {routeConstants} from "../router/routeConstants.ts";
-import {NavLink, useLocation} from "react-router-dom";
 import React from "react";
+import {NavLink, useLocation} from "react-router-dom";
+import {routeConstants} from "../router/routeConstants.ts";
 import {DashboardActiveIcon, DashboardIcon, RewardBigIcon} from '../assets/Icons.tsx'
+
 const Sidebar = () => {
     const location = useLocation()
 
@@ -19,6 +20,7 @@ const Sidebar = () => {
             path: routeConstants.rewards,
         },
     ]
+
     return (
         <>
             <div className="flex flex-col py-2 px-5 h-screen overflow-y-auto w-[15.9375rem] bg-purple pt-[12.375rem] rounded-tr-[1.25rem]">
