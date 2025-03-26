@@ -1,20 +1,39 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import StatCard from "../../components/dashboard/StatCard.tsx";
 import RewardChart from "../../components/dashboard/RewardChart.tsx";
 import Tabs from "../../components/Tabs.tsx";
 import TabPanel from "../../components/TabPanel.tsx";
-import RewardsTable from "../../components/RewardsTable.tsx";
+import TableContainer from "../../components/TableContainer.tsx";
 import StatusLegend from "../../components/dashboard/StatusLegend.tsx";
 import {
     DownloadIcon,
 } from "../../assets/Icons.tsx";
 import {dashboardTabs, rewardsStats} from "../../constants.ts";
+import {generatePath, useNavigate} from "react-router-dom";
+import {routeConstants} from "../../router/routeConstants.ts";
+import {fetchRewardsData} from "../../services/rewardsApi.ts";
+import {User} from "../../data/types/Rewards.ts";
+import {rewardsTableColumns} from "../../components/dashboard/components/RewardsTableColumns.tsx";
 
 const Dashboard = () => {
     const navigate = useNavigate()
     const [selectedValue, setSelectedValue] = useState("all-time")
     const [selectedIndex, setSelectedIndex] = useState(2)
+    const [userList, setUserList] = React.useState<User[]>([]);
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                const data = await fetchRewardsData();
+                setUserList(data);
+            } catch (err) {
+                console.error(err);
+            } finally {
+                // setLoading(false);
+            }
+        };
 
+        loadData();
+    }, []);
     return (
         <div className='h-100 flex flex-col gap-10 flex-1 overflow-auto no-scrollbar'>
             <select value={selectedValue} onChange={(event)=>setSelectedValue(event.target.value)}
@@ -41,9 +60,11 @@ const Dashboard = () => {
                     <div className="bg-white w-full h-[22.125rem] rounded-[0.625rem]">
                         <StatusLegend/>
                        <div className="border-t">
-                           <RewardsTable
+                           <TableContainer
+                               columns={rewardsTableColumns}
+                               bodyData={userList}
                                bodyRowClassName="!h-[3.125rem]"
-                               onRowClick={(row)=> {
+                               onRowClick={(row: any)=> {
                                    navigate(generatePath(routeConstants.usersView,{id: row.original.firstName}), {state: row.original})
                                }}
                            />

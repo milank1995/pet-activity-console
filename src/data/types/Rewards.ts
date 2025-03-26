@@ -16,10 +16,12 @@ export interface User {
 }
 
 export interface TableContainerProps {
+    bodyData: any[]
+    columns: any[],
     bodyRowClassName?: string;
     tableClassName?: string;
     headerClassName?: string;
-    onRowClick: (id: number | string) => void;
+    onRowClick?: (row:any)=>void,
 }
 
 export interface StatusListItem {

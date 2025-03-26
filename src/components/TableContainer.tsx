@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React, {useEffect, useMemo} from "react";
 import {
     ColumnDef,
     flexRender,
@@ -20,32 +20,21 @@ import {
 import {fetchRewardsData} from "../services/rewardsApi.ts";
 import {rewardsTableColumns} from "./dashboard/components/RewardsTableColumns.tsx";
 
-const RewardsTable = ({bodyRowClassName, tableClassName, headerClassName, onRowClick,} : TableContainerProps) => {
+const TableContainer = ({bodyData, columns, bodyRowClassName, tableClassName, headerClassName, onRowClick} : TableContainerProps) => {
     const [pagination, setPagination] = React.useState<PaginationState>({
         pageIndex: 0,
         pageSize: 10,
     })
     const [sorting, setSorting] = React.useState<SortingState>([])
-    const [userList, setUserList] = React.useState<User[]>([]);
 
-    useEffect(() => {
-        const loadData = async () => {
-            try {
-                const data = await fetchRewardsData();
-                setUserList(data);
-            } catch (err) {
-                console.error(err);
-            } finally {
-                // setLoading(false);
-            }
-        };
-
-        loadData();
-    }, []);
+    const data = useMemo(
+        () => bodyData ,
+        [bodyData]
+    );
 
     const table = useReactTable({
-        columns: rewardsTableColumns,
-        data: userList,
+        columns,
+        data,
         debugTable: true,
         getCoreRowModel: getCoreRowModel(),
         getSortedRowModel: getSortedRowModel(),
@@ -66,23 +55,7 @@ const RewardsTable = ({bodyRowClassName, tableClassName, headerClassName, onRowC
 
     const pageCount = table.getPageCount();
     const currentPage = table.getState().pagination.pageIndex + 1;
-    // const getPaginationButtons = () => {
-    //     const pages = [];
-    //
-    //     if (pageCount <= 5) {
-    //         pages.push(...Array.from({ length: pageCount }, (_, i) => i + 1));
-    //     } else {
-    //         if (currentPage <= 3) {
-    //             pages.push(1, 2, 3, 4, 5, '...', pageCount);
-    //         } else if (currentPage > 3 && currentPage < pageCount - 2) {
-    //             pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', pageCount);
-    //         } else {
-    //             pages.push(1, '...', pageCount - 4, pageCount - 3, pageCount - 2, pageCount - 1, pageCount);
-    //         }
-    //     }
-    //
-    //     return pages;
-    // };
+
     const getPaginationButtons = () => {
         const pages: (number | string)[] = [];
 
@@ -138,14 +111,14 @@ const RewardsTable = ({bodyRowClassName, tableClassName, headerClassName, onRowC
                     </thead>
                     <tbody className="text-xs font-normal text-dark-gray">
                     {
-                        userList.length > 0 &&
+                        bodyData.length > 0 &&
                         <>
                             {table
                                 .getRowModel()
                                 .rows
                                 .map(row => {
                                     return (
-                                        <tr key={row.id} onClick={() => onRowClick(row.id)} className={`h-[4.75rem] border-b border-gray10 ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
+                                        <tr key={row.id} onClick={() => onRowClick?.(row)} className={`h-[4.75rem] border-b border-gray10 ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
                                             {row.getVisibleCells().map((cell, index) => {
                                                 return (
                                                     <td key={cell.id} className={`font-normal py-4 ${index === 0 ? 'pl-3 pr-3': 'px-3'}`}>
@@ -167,7 +140,7 @@ const RewardsTable = ({bodyRowClassName, tableClassName, headerClassName, onRowC
 
 
             {
-                userList.length > 0 &&
+                bodyData.length > 0 &&
                 <div className="flex items-center justify-between py-5 px-3">
                     <div className="text-dark-gray font-normal text-xs flex items-center gap-3">
                         <div className="flex items-center gap-3">
@@ -251,4 +224,4 @@ const RewardsTable = ({bodyRowClassName, tableClassName, headerClassName, onRowC
     );
 };
 
-export default RewardsTable;
+export default TableContainer;
