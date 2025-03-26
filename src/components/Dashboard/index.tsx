@@ -1,4 +1,3 @@
-import React from "react";
 import { generatePath, useNavigate } from "react-router-dom";
 import { DownloadIcon } from "../../assets/Icons.tsx";
 import DataTable from "../../components/DataTable";
@@ -58,7 +57,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <RewardChart />
+            <RewardChart className="" />
           </div>
           <div className="bg-white w-full rounded-[0.625rem]">
             <div className="flex items-center justify-end gap-5 p-3">

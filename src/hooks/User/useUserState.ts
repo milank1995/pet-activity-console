@@ -1,4 +1,4 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {RewardStar, User} from "../../data/types/Rewards.ts";
 import {fetchStarsData, fetchUserById} from "../../services/rewardsApi.ts";
@@ -11,7 +11,7 @@ export const useUserState = () => {
 
     useEffect(() => {
         const query = document.querySelector('#user-content');
-        query.scrollTo(0, 0);
+        query?.scrollTo(0, 0);
     }, [])
 
     useEffect(() => {
