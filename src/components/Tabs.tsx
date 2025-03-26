@@ -18,7 +18,7 @@ const Tabs = ({tabs, selectedIndex=0, onTabChange, tabButtonClassName} : Props) 
                         type="button"
                         key={index}
                         onClick={(event:React.MouseEvent<HTMLButtonElement>)=>onTabChange?.(index, event)}
-                        className={`${selectedIndex === index ? "bg-purple text-white" : "text-purple bg-white"} font-bold text-sm p-3 rounded ${tabButtonClassName}`}
+                        className={`${selectedIndex === index ? "bg-purple text-white" : "text-purple bg-white"} font-bold text-sm p-3 min-w-[8.75rem] rounded ${tabButtonClassName}`}
                     >{tab.name}</button>
                 ))
             }

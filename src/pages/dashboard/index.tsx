@@ -8,12 +8,12 @@ import StatusLegend from "../../components/dashboard/StatusLegend.tsx";
 import {
     DownloadIcon,
 } from "../../assets/Icons.tsx";
-import {dashboardTabs, rewardsStats} from "../../constants.ts";
+import {dashboardTabs, rewardsStats, statusList} from "../../constants.ts";
 import {generatePath, useNavigate} from "react-router-dom";
 import {routeConstants} from "../../router/routeConstants.ts";
 import {fetchRewardsData} from "../../services/rewardsApi.ts";
 import {User} from "../../data/types/Rewards.ts";
-import {rewardsTableColumns} from "../../components/dashboard/components/RewardsTableColumns.tsx";
+import {rewardsTableColumns} from "../../components/dashboard/RewardsTableColumns.tsx";
 
 const Dashboard = () => {
     const navigate = useNavigate()
@@ -57,19 +57,25 @@ const Dashboard = () => {
                         <RewardChart/>
 
                     </div>
-                    <div className="bg-white w-full h-[22.125rem] rounded-[0.625rem]">
-                        <StatusLegend/>
-                       <div className="border-t">
+                    <div className="bg-white w-full rounded-[0.625rem]">
+                        <div className="flex items-center justify-end gap-5 p-3">
+                            {
+                                statusList.map((status,index)=>(
+                                <StatusLegend key={index} {...status}/>
+                                ))
+                            }
+                        </div>
+
+                       <div className="border-t border-light-gray">
                            <TableContainer
                                columns={rewardsTableColumns}
                                bodyData={userList}
                                bodyRowClassName="!h-[3.125rem]"
                                onRowClick={(row: any)=> {
-                                   navigate(generatePath(routeConstants.usersView,{id: row.original.firstName}), {state: row.original})
+                                   navigate(generatePath(routeConstants.usersView,{id: row.original.id}))
                                }}
                            />
                        </div>
-
                     </div>
 
                 </TabPanel>

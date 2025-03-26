@@ -1,40 +1,34 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { User } from "../../../data/types/Rewards.ts";
-import { statusList } from "../StatusLegend.tsx";
-import { DownloadIcon } from "../../../assets/Icons.tsx";
+import {RewardStar, User} from "../../data/types/Rewards.ts";
+import { DownloadIcon } from "../../assets/Icons.tsx";
+import {statusList, statusListStars} from "../../constants.ts";
 
-export const rewardsTableColumns: ColumnDef<User>[] = [
+export const starsTableColumns: ColumnDef<RewardStar>[] = [
     {
         accessorKey: 'status',
-        header: 'Status',
+        header: '',
         cell: ({ row }) => {
             const status = row.original.status;
-            const bgColor = statusList.find(item => item.label === status)?.color;
-            const icon = statusList.find(item => item.label === status)?.icon;
+            const bgColor = statusListStars.find(item => item.label === status)?.color;
+            const Icon = statusListStars.find(item => item.label === status)?.icon;
             return (
                 <div className={`flex items-center justify-center w-6 h-6 rounded-full ${bgColor}`}>
-                    {icon}
+                    <Icon/>
                 </div>
             );
         },
-        size: 200,
+        size: 30,
         enableSorting: false,
-    },
-    {
-        accessorKey: 'firstName',
-        header: 'First Name',
-        size: 150,
-        enableSorting: true,
-    },
-    {
-        accessorKey: 'lastName',
-        header: 'Last Name',
-        size: 200,
-        enableSorting: true,
     },
     {
         accessorKey: 'petName',
         header: 'Pet Name',
+        size: 200,
+        enableSorting: true,
+    },
+    {
+        accessorKey: 'product',
+        header: 'Product',
         size: 200,
         enableSorting: true,
     },
@@ -44,12 +38,7 @@ export const rewardsTableColumns: ColumnDef<User>[] = [
         size: 250,
         enableSorting: true,
     },
-    {
-        accessorKey: 'redeemedDate',
-        header: 'Redeemed Date',
-        size: 250,
-        enableSorting: true,
-    },
+
     {
         accessorKey: 'expiryDate',
         header: 'Expiry Date',

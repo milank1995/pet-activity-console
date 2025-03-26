@@ -880,5 +880,187 @@
       "expiryDate": "-",
       "size": "Small"
     }
+  ],
+  "stars": [
+    {
+      "id": 1,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/10/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 2,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/10/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 3,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/10/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 4,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/10/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 5,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/10/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 6,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/09/24",
+      "expiryDate": "01/06/25",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 7,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/08/24",
+      "expiryDate": "01/03/25",
+      "size": "Large",
+      "status": "Stars expiring soon (within 30 days)"
+    },
+    {
+      "id": 8,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/11/24",
+      "expiryDate": "01/12/24",
+      "size": "Large",
+      "status": "Stars expired"
+    },
+    {
+      "id": 9,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/07/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Current stars"
+    },
+    {
+      "id": 10,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/06/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 11,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/05/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Stars expired"
+    },
+    {
+      "id": 12,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/04/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Stars expiring soon (within 30 days)"
+    },
+    {
+      "id": 13,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/03/24",
+      "expiryDate": "01/10/24",
+      "size": "Large",
+      "status": "Current stars"
+    },
+    {
+      "id": 14,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/02/24",
+      "expiryDate": "01/09/24",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 15,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "01/01/24",
+      "expiryDate": "-",
+      "size": "Large",
+      "status": "Stars expired"
+    },
+    {
+      "id": 16,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "12/31/23",
+      "expiryDate": "12/31/24",
+      "size": "Large",
+      "status": "Stars expiring soon (within 30 days)"
+    },
+    {
+      "id": 17,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "12/15/23",
+      "expiryDate": "12/15/24",
+      "size": "Large",
+      "status": "Current stars"
+    },
+    {
+      "id": 18,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "12/01/23",
+      "expiryDate": "12/01/24",
+      "size": "Large",
+      "status": "Rewarded stars"
+    },
+    {
+      "id": 19,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "11/15/23",
+      "expiryDate": "11/15/24",
+      "size": "Large",
+      "status": "Stars expired"
+    },
+    {
+      "id": 20,
+      "petName": "Buddy",
+      "product": "Bravecto",
+      "issueDate": "11/01/23",
+      "expiryDate": "11/01/24",
+      "size": "Large",
+      "status": "Stars expiring soon (within 30 days)"
+    }
   ]
 }

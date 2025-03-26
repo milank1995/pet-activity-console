@@ -27,9 +27,16 @@ export interface TableContainerProps {
 export interface StatusListItem {
     label: string;
     color: string;
-    icon: React.ReactNode;
+    icon: React.ElementType;
 }
 
-export interface RewardsTableHeadProps<TData> {
-    table: Table<TData>;
+export interface RewardStar {
+    id: number;
+    petName: string;
+    product: string;
+    issueDate: string;
+    expiryDate: string;
+    size: string;
+    status: string;
 }
+

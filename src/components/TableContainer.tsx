@@ -18,7 +18,7 @@ import {
     RightSingleArrowIcon
 } from "../assets/Icons.tsx";
 import {fetchRewardsData} from "../services/rewardsApi.ts";
-import {rewardsTableColumns} from "./dashboard/components/RewardsTableColumns.tsx";
+import {rewardsTableColumns} from "./dashboard/RewardsTableColumns.tsx";
 
 const TableContainer = ({bodyData, columns, bodyRowClassName, tableClassName, headerClassName, onRowClick} : TableContainerProps) => {
     const [pagination, setPagination] = React.useState<PaginationState>({
@@ -79,7 +79,7 @@ const TableContainer = ({bodyData, columns, bodyRowClassName, tableClassName, he
                 <table className={`w-full ${tableClassName}`}>
                     <thead className="sticky top-0 z-10  text-left text-xs text-black font-semibold capitalize">
                     {table.getHeaderGroups().map(headerGroup => (
-                        <tr key={headerGroup.id} className="border-b border-gray10">
+                        <tr key={headerGroup.id} className="border-b border-light-gray">
                             {headerGroup.headers.map((header, index) => {
                                 return (
                                     <th key={header.id} colSpan={header.colSpan} className={`${index === 0 ? 'pl-3 pr-3':'px-3'} py-8`} style={{width:header.getSize()}}>
@@ -118,7 +118,7 @@ const TableContainer = ({bodyData, columns, bodyRowClassName, tableClassName, he
                                 .rows
                                 .map(row => {
                                     return (
-                                        <tr key={row.id} onClick={() => onRowClick?.(row)} className={`h-[4.75rem] border-b border-gray10 ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
+                                        <tr key={row.id} onClick={() => onRowClick?.(row)} className={`h-[4.75rem] border-b border-light-gray ${onRowClick? 'cursor-pointer':'cursor-auto'} ${bodyRowClassName}`}>
                                             {row.getVisibleCells().map((cell, index) => {
                                                 return (
                                                     <td key={cell.id} className={`font-normal py-4 ${index === 0 ? 'pl-3 pr-3': 'px-3'}`}>
@@ -209,7 +209,7 @@ const TableContainer = ({bodyData, columns, bodyRowClassName, tableClassName, he
                             <RightSingleArrowIcon/>
                         </button>
                         <button
-                            className="btn-pagination rounded-r"
+                            className="btn-pagination rounded-r "
                             onClick={() => table.lastPage()}
                             disabled={!table.getCanNextPage()}
                         >
