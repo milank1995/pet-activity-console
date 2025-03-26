@@ -2,7 +2,7 @@ import ApexCharts, { ApexOptions } from "apexcharts";
 import { useEffect, useRef } from "react";
 
 interface Props {
-  className?: string;
+  className: string;
 }
 
 const activityData = [
@@ -20,26 +20,18 @@ const activityData = [
   { month: "Dec", value: 25 },
 ];
 const RewardChart = ({ className }: Props) => {
-  const chartRef = useRef<HTMLDivElement | null>(null);
+  const chartRef = useRef<HTMLDivElement>(null!);
 
   const refreshMode = () => {
-    if (!chartRef.current) return;
-
     const chart = new ApexCharts(chartRef.current, getChartOptions());
     chart.render();
-
     return chart;
   };
 
   useEffect(() => {
     const chart = refreshMode();
-
-    return () => {
-      if (chart) {
-        chart.destroy();
-      }
-    };
-  }, [chartRef, activityData]);
+    return () => chart?.destroy();
+  }, []);
 
   const chartSeries = [
     {
@@ -158,15 +150,15 @@ const RewardChart = ({ className }: Props) => {
   }
 
   return (
-    <div className={className}>
-      <div className="w-100">
-        <div
-          ref={chartRef}
-          id="kt_charts_widget_3_chart"
-          style={{ height: "264px", width: "100%" }}
-        ></div>
+      <div className={className}>
+        <div className="w-100">
+          <div
+              ref={chartRef}
+              id="kt_charts_widget_3_chart"
+              style={{ height: "264px", width: "100%" }}
+          ></div>
+        </div>
       </div>
-    </div>
   );
 };
 
