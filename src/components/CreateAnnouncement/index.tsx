@@ -3,7 +3,7 @@ import { Radio, RadioGroup, Field } from '@headlessui/react'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { ClassicEditor, Essentials, Paragraph, Bold, Italic } from 'ckeditor5';
 import 'ckeditor5/ckeditor5.css';
-import {audience, deliveryTimes, responseSettingOptions} from "../../constants.ts";
+import {Audience, audience, deliveryTimes, responseSettingOptions} from "../../constants.ts";
 
 
 
@@ -28,7 +28,6 @@ const CreateAnnouncement = () => {
     const [formData, setFormData] = useState(initialFormData)
     const selectedAudienceOptions = audience.find((item) => item.value === formData.targetAudience)?.options
 
-    console.log('formData--->', formData)
 
     const handleInputChange = (event) => {
         const {value, name} = event.target
@@ -43,6 +42,9 @@ const CreateAnnouncement = () => {
     }
 
     const handleAudienceAndResponseSettingChange = (value, name) => {
+        if(name === 'targetAudience') {
+            setFormData((preData) => ({...preData, referenceId :""}))
+        }
         setFormData((preData) => ({...preData, [name] :value}))
     }
 
@@ -123,16 +125,26 @@ const CreateAnnouncement = () => {
                                 </Field>
                             ))}
                         </RadioGroup>
-                        <div className="flex gap-4 text-dark-gray mt-4">
-                            <p className="font-semibold">Options:</p>
-                            <ul>
-                                {
-                                    (selectedAudienceOptions || []).map((option, index) => (
-                                        <li key={index}>{option}</li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
+                        {
+                            formData.targetAudience !== Audience.ALL &&
+                            <div className="flex gap-4 text-dark-gray mt-4">
+                                <p className="font-semibold">Options:</p>
+                                <select
+                                    value={formData.referenceId}
+                                    name="referenceId"
+                                    onChange={handleInputChange}
+                                    className="input"
+                                >
+                                    <option value="">Select option</option>
+                                    {
+                                        (selectedAudienceOptions || []).map((option, index) => (
+                                            <option key={index} value={option}>{option}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                        }
+
                     </div>
                 </div>
                 <div className="grid grid-cols-4">
