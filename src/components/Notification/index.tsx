@@ -20,7 +20,6 @@ const Notification = () => {
 
     const handleClick = (e) => {
         const rect = e.currentTarget.getBoundingClientRect();
-        console.log('rect', rect)
         // setPanelPosition({
         //     top: rect.top + window.scrollY,
         //     left: rect.left - rect.width - 100 // 10px space between item and panel
