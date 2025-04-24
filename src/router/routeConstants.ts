@@ -4,4 +4,5 @@ export const routeConstants = {
     usersView: '/pet-owner/view/:id',
     createAnnouncement: '/create-announcement',
     announcements: '/announcements',
+    notifications: '/notifications',
 };
