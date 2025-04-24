@@ -26,6 +26,16 @@ const Sidebar = () => {
       label: "Rewards",
       path: "/rewards/view/1",
     },
+    {
+      icon: RewardBigIcon,
+      label: "Create Announcement",
+      path: routeConstants.createAnnouncement,
+    },
+    {
+      icon: RewardBigIcon,
+      label: "Announcements",
+      path: routeConstants.announcements,
+    },
   ];
 
   return (

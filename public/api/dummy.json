@@ -1062,5 +1062,429 @@
       "size": "Large",
       "status": "Stars expiring soon (within 30 days)"
     }
-  ]
+  ],
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Subject 1",
+      "type": "MSG",
+      "createdBy": "User1",
+      "receiver": "DEPT (JERA)",
+      "created": "4/22/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 2,
+      "title": "Subject 1",
+      "type": "MSG",
+      "createdBy": "User1",
+      "receiver": "DEPT (JERA)",
+      "created": "4/22/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 3,
+      "title": "Subject 2",
+      "type": "MSG",
+      "createdBy": "User2",
+      "receiver": "DEPT (JERA)",
+      "created": "4/22/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 4,
+      "title": "Subject 3",
+      "type": "MSG",
+      "createdBy": "User3",
+      "receiver": "DEPT (JERA)",
+      "created": "4/21/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 5,
+      "title": "Subject 4",
+      "type": "MSG",
+      "createdBy": "User4",
+      "receiver": "DEPT (JERA)",
+      "created": "4/20/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 6,
+      "title": "Subject 5",
+      "type": "MSG",
+      "createdBy": "User5",
+      "receiver": "DEPT (JERA)",
+      "created": "4/20/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 7,
+      "title": "Subject 6",
+      "type": "MSG",
+      "createdBy": "User6",
+      "receiver": "DEPT (JERA)",
+      "created": "4/19/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 8,
+      "title": "Subject 7",
+      "type": "MSG",
+      "createdBy": "User7",
+      "receiver": "DEPT (JERA)",
+      "created": "4/19/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 9,
+      "title": "Subject 8",
+      "type": "MSG",
+      "createdBy": "User8",
+      "receiver": "DEPT (JERA)",
+      "created": "4/18/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 10,
+      "title": "Subject 9",
+      "type": "MSG",
+      "createdBy": "User9",
+      "receiver": "DEPT (JERA)",
+      "created": "4/18/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 11,
+      "title": "Subject 10",
+      "type": "MSG",
+      "createdBy": "User10",
+      "receiver": "DEPT (JERA)",
+      "created": "4/17/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 12,
+      "title": "Subject 11",
+      "type": "MSG",
+      "createdBy": "User11",
+      "receiver": "DEPT (JERA)",
+      "created": "4/17/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 13,
+      "title": "Subject 12",
+      "type": "MSG",
+      "createdBy": "User12",
+      "receiver": "DEPT (JERA)",
+      "created": "4/16/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 14,
+      "title": "Subject 13",
+      "type": "MSG",
+      "createdBy": "User13",
+      "receiver": "DEPT (JERA)",
+      "created": "4/16/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 15,
+      "title": "Subject 14",
+      "type": "MSG",
+      "createdBy": "User14",
+      "receiver": "DEPT (JERA)",
+      "created": "4/15/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 16,
+      "title": "Subject 15",
+      "type": "MSG",
+      "createdBy": "User15",
+      "receiver": "DEPT (JERA)",
+      "created": "4/15/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 17,
+      "title": "Subject 16",
+      "type": "MSG",
+      "createdBy": "User16",
+      "receiver": "DEPT (JERA)",
+      "created": "4/14/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 18,
+      "title": "Subject 17",
+      "type": "MSG",
+      "createdBy": "User17",
+      "receiver": "DEPT (JERA)",
+      "created": "4/14/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 19,
+      "title": "Subject 18",
+      "type": "MSG",
+      "createdBy": "User18",
+      "receiver": "DEPT (JERA)",
+      "created": "4/13/2025",
+      "action": "MARK AS Complete / Incomplete / May be",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    },
+    {
+      "id": 20,
+      "title": "Subject 19",
+      "type": "MSG",
+      "createdBy": "User19",
+      "receiver": "DEPT (JERA)",
+      "created": "4/13/2025",
+      "action": "Comment",
+      "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+    }
+  ],
+  "notifications": [
+  {
+    "id": 1,
+    "title": "Subject 1",
+    "type": "MSG",
+    "createdBy": "User1",
+    "receiver": "DEPT (JERA)",
+    "created": "4/22/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 2,
+    "title": "Subject 1",
+    "type": "MSG",
+    "createdBy": "User1",
+    "receiver": "DEPT (JERA)",
+    "created": "4/22/2025",
+    "action": "Comment",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 3,
+    "title": "Subject 2",
+    "type": "MSG",
+    "createdBy": "User2",
+    "receiver": "DEPT (JERA)",
+    "created": "4/22/2025",
+    "action": "Comment",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 4,
+    "title": "Subject 3",
+    "type": "MSG",
+    "createdBy": "User3",
+    "receiver": "DEPT (JERA)",
+    "created": "4/21/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 5,
+    "title": "Subject 4",
+    "type": "MSG",
+    "createdBy": "User4",
+    "receiver": "DEPT (JERA)",
+    "created": "4/20/2025",
+    "action": "Comment",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 6,
+    "title": "Subject 5",
+    "type": "MSG",
+    "createdBy": "User5",
+    "receiver": "DEPT (JERA)",
+    "created": "4/20/2025",
+    "action": "Comment",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 7,
+    "title": "Subject 6",
+    "type": "MSG",
+    "createdBy": "User6",
+    "receiver": "DEPT (JERA)",
+    "created": "4/19/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 8,
+    "title": "Subject 7",
+    "type": "MSG",
+    "createdBy": "User7",
+    "receiver": "DEPT (JERA)",
+    "created": "4/19/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 9,
+    "title": "Subject 8",
+    "type": "MSG",
+    "createdBy": "User8",
+    "receiver": "DEPT (JERA)",
+    "created": "4/18/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 10,
+    "title": "Subject 9",
+    "type": "MSG",
+    "createdBy": "User9",
+    "receiver": "DEPT (JERA)",
+    "created": "4/18/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 11,
+    "title": "Subject 10",
+    "type": "MSG",
+    "createdBy": "User10",
+    "receiver": "DEPT (JERA)",
+    "created": "4/17/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 12,
+    "title": "Subject 11",
+    "type": "MSG",
+    "createdBy": "User11",
+    "receiver": "DEPT (JERA)",
+    "created": "4/17/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 13,
+    "title": "Subject 12",
+    "type": "MSG",
+    "createdBy": "User12",
+    "receiver": "DEPT (JERA)",
+    "created": "4/16/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 14,
+    "title": "Subject 13",
+    "type": "MSG",
+    "createdBy": "User13",
+    "receiver": "DEPT (JERA)",
+    "created": "4/16/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 15,
+    "title": "Subject 14",
+    "type": "MSG",
+    "createdBy": "User14",
+    "receiver": "DEPT (JERA)",
+    "created": "4/15/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 16,
+    "title": "Subject 15",
+    "type": "MSG",
+    "createdBy": "User15",
+    "receiver": "DEPT (JERA)",
+    "created": "4/15/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 17,
+    "title": "Subject 16",
+    "type": "MSG",
+    "createdBy": "User16",
+    "receiver": "DEPT (JERA)",
+    "created": "4/14/2025",
+    "action": "Comment",
+    "read" : true,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 18,
+    "title": "Subject 17",
+    "type": "MSG",
+    "createdBy": "User17",
+    "receiver": "DEPT (JERA)",
+    "created": "4/14/2025",
+    "action": "Comment",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 19,
+    "title": "Subject 18",
+    "type": "MSG",
+    "createdBy": "User18",
+    "receiver": "DEPT (JERA)",
+    "created": "4/13/2025",
+    "action": "MARK AS Complete / Incomplete / May be",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  },
+  {
+    "id": 20,
+    "title": "Subject 19",
+    "type": "MSG",
+    "createdBy": "User19",
+    "receiver": "DEPT (JERA)",
+    "created": "4/13/2025",
+    "action": "Comment",
+    "read" : false,
+    "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>"
+  }
+]
 }

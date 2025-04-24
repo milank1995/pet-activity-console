@@ -66,3 +66,27 @@ export const petsList = [
         bgColor: 'bg-blue'
     }
 ]
+
+export const ResponseSetting = Object.freeze({
+    BOTH: "0",
+    COMPLETED_INCOMPLETED: "1",
+    COMMENT: "2",
+});
+
+export const Audience = Object.freeze({
+    DEPT: "dept",
+    POSITION: "position",
+    ALL: "all",
+});
+export const deliveryTimes = ['now', 'schedule']
+export const audience = [
+    { label: 'Dept', value: Audience.DEPT, options: ["IT", "Art", "Teaching"] },
+    { label: 'Dept/Position', value: Audience.POSITION, options: ["IT-Software Engineer", "Art-Dancer", "Teaching-Professor"] },
+    { label: 'All Member', value: Audience.ALL, options:["IT-All", "Art-All", "Teaching-All"] },
+]
+
+export const responseSettingOptions = [
+    { label: 'Both', value: ResponseSetting.BOTH},
+    { label: 'Mark As Complete/Incomplete', value: ResponseSetting.COMPLETED_INCOMPLETED },
+    { label: 'Comment', value: ResponseSetting.COMMENT},
+]

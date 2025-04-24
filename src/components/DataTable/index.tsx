@@ -80,7 +80,7 @@ const TableContainer = ({
     <div className="relative h-full w-full flex flex-col bg-white">
       <div className="overflow-auto pb-2 h-auto table-scrollbar">
         <table className={`w-full ${tableClassName}`}>
-          <thead className="sticky top-0 z-10  text-left text-xs text-black font-semibold capitalize">
+          <thead className="sticky top-0 z-10  text-left text-xs text-black font-semibold capitalize bg-white">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id} className="border-b border-light-gray">
                 {headerGroup.headers.map((header, index) => {

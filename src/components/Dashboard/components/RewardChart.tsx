@@ -151,7 +151,7 @@ const RewardChart = ({ className }: Props) => {
 
   return (
       <div className={className}>
-        <div className="w-100">
+        <div className="w-full">
           <div
               ref={chartRef}
               id="kt_charts_widget_3_chart"

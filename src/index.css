@@ -74,6 +74,11 @@ html {
 .btn-pagination {
  @apply flex items-center justify-center w-[2.375rem] h-[2.375rem] border border-light-gray text-dark-gray
 }
+
+.input {
+    @apply px-2.5 py-2 border border-gray rounded-md text-black text-base outline-0
+}
+
 .border-top {
     border-bottom-left-radius: 44%  25% ;
     border-bottom-right-radius: 44%  25% ;
@@ -83,3 +88,4 @@ html {
     border-top-left-radius: 54%  40% ;
     border-top-right-radius: 54%  40% ;
 }
+
